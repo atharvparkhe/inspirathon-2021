@@ -1,7 +1,6 @@
-from rest_framework.generics import ListCreateAPIView, RetrieveAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveAPIView, RetrieveUpdateDestroyAPIView, RetrieveUpdateAPIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework.serializers import Serializer
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
@@ -9,8 +8,6 @@ from authentication.models import SellerModel
 from .models import *
 from .threads import *
 from .serializers import *
-from datetime import datetime
-import pandas as pd
 
 
 class RestaurantLC(ListCreateAPIView):
@@ -37,7 +34,7 @@ class RestaurantR(RetrieveAPIView):
     serializer_class = RestaurantSerializer
     lookup_field = "id"
 
-class RestaurantRUD(RetrieveUpdateDestroyAPIView):
+class RestaurantRUD(RetrieveUpdateAPIView):
     authentication_classes = [JWTAuthentication]
     permission_classes = [IsAuthenticated]
     queryset = RestaurantModel.objects.all()
