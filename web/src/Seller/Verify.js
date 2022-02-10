@@ -6,8 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
-const BaseUrl = "https://delta-inspiration.herokuapp.com/api/seller-verify/"
-const BaseUrl_resend = "https://delta-inspiration.herokuapp.com/api/resend/seller-verify/"
+const BaseUrl = "https://inspiration-2021-backend.herokuapp.com/api/seller-verify/"
+const BaseUrl_resend = "https://inspiration-2021-backend.herokuapp.com/api/resend/seller-verify/"
 
 export default function Verify() {
     const history = useHistory();
@@ -150,7 +150,7 @@ letter-spacing: 0.4rem;
 }
 @media only screen and (min-width: 1024px) {
   width: 70vw;
-  height: 50vh;
+  height: 70vh;
 }
 @media only screen and (min-width: 1280px) {
   width: 30vw;

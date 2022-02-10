@@ -1,18 +1,22 @@
 import React,{useState} from 'react'
 import styled from 'styled-components';
-import {Link,useHistory} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
+import { useHistory } from 'react-router';
+import { browserHistory } from 'react-router'
+import {useNavigate} from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
-const BaseUrl = "https://delta-inspiration.herokuapp.com/api/seller-login/"
-const checkUrl = "https://delta-inspiration.herokuapp.com/api/check-restaurant/"
+const BaseUrl = "https://inspiration-2021-backend.herokuapp.com/api/seller-login/"
+const checkUrl = "https://inspiration-2021-backend.herokuapp.com/api/check-restaurant/"
 
 const secondary = "#f9fbf2";
 export default function Login() {
 
     const history = useHistory()
+		// const history = useNavigate() 
     const [email, setemail] = useState()
     const [password, setpassword] = useState()
     const [info, setinfo] = useState(null)
@@ -23,10 +27,12 @@ export default function Login() {
         "password": password
       }).then((res)=>{
         toast.success(res.data.message);
-        console.log(res.data.token);
+				console.log("Login info")
+        console.log(res.data);
         // localStorage.setItem('res_id',res.data.restaurant_id)
         localStorage.setItem('token',res.data.token)
         if(res.data.restaurant_id != undefined){
+					localStorage.setItem('res_id',res.data.restaurant_id)
           history.push('/dashboard')
           
         }
@@ -59,6 +65,7 @@ export default function Login() {
 }
 
 const Button_text = styled.p`
+		padding-top: 20px;
     font-size: 11px;
     color: black;
     cursor: pointer;
@@ -110,6 +117,7 @@ const Input = styled.input`
     }
 `;
 const Button_container = styled.div`
+		padding-top: 10px;
     margin: 1rem 0 2rem 0;
     width: 100%;
     display: flex;
@@ -122,6 +130,7 @@ const Button_container = styled.div`
 
 const Input_container = styled.div`
     display: flex;
+		padding-top: 30px;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -131,16 +140,17 @@ const Input_container = styled.div`
 `;
 
 const Container = styled.div`
-
 margin-top: 30px;
 display: flex;
+flex: 1;
 align-items: center;
 flex-direction: column;
 margin-left: auto;
 margin-right: auto;
+margin-bottom: auto;
 padding:30px;
-height: 80vh;
-width: 30vw;
+// height: 80vh;
+// width: 30vw;
 background: #191a19;
 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 backdrop-filter: blur(8.5px);
@@ -182,7 +192,7 @@ h1 {
 }
 @media only screen and (min-width: 1024px) {
   width: 70vw;
-  height: 50vh;
+  height: 80vh;
 }
 @media only screen and (min-width: 1280px) {
   width: 30vw;

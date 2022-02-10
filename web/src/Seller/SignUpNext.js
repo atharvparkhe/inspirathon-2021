@@ -10,7 +10,7 @@ toast.configure()
 
 
 
-const BaseUrl = "https://delta-inspiration.herokuapp.com/api/restaurants/"
+const BaseUrl = "https://inspiration-2021-backend.herokuapp.com/api/restaurants/"
 
 export default function SignUpNext() {
   const [address, setaddress] = useState()
@@ -111,12 +111,12 @@ export default function SignUpNext() {
 }
 const Input = styled.input`
     background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    box-shadow: 0 8px 14px 0 rgba(31, 38, 135, 0.37);
     border-radius: 2rem;
-    margin: 17px;
+    margin: 10px;
     width: 80%;
     height: 2rem;
-    padding: 1rem;
+    padding: 0.5rem;
     border: none;
     outline: none;
     color: #3c354e;
@@ -140,7 +140,7 @@ const Button_text = styled.p`
     color: black;
     cursor: pointer;s
     background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    box-shadow: 0 8px 320px 0 rgba(31, 38, 135, 0.37);
     border-radius: 2rem;
     margin: 20px;
     width: 80%;
@@ -166,6 +166,10 @@ const Button_text = styled.p`
 const Button_container = styled.div`
     display: flex;
     flex-direction: column;
+		padding: 10px;
+		margin-bottom: 0px;
+		display: flex;
+		align-items: center;
     // margin: 1rem 0 2rem 0;
     // width: 100%;
     // display: flex;
@@ -177,72 +181,74 @@ const Button_container = styled.div`
 `;
 
 const Input_container = styled.div`
-    // display: flex;
-    // position: fixed;
-    // overflow-y: hidden;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    // height: 30%;
-    // width: 100%;
-    // margin: 90px;
-    // margin-top: 130px;
+    display: flex;
+		padding: 15px;
+		margin: 10px;
+		// background-color: red;
+		margin-left: auto;
+		margin-right: auto;
+    overflow-y: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 `;
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-// margin-top: 30px;
-// display: flex;
-// align-items: center;
-// flex-direction: column;
-// margin-left: auto;
-// margin-right: auto;
-// padding:30px;
-// height: 80vh;
-// width: 30vw;
-// overflow: scroll;
-// background: rgba(255, 255, 255, 0.15);
-// box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-// backdrop-filter: blur(8.5px);
-// -webkit-backdrop-filter: blur(8.5px);
-// border-radius: 10px;
-// color: #ffffff;
-// text-transform: uppercase;
-// letter-spacing: 0.4rem;
-// @media only screen and (max-width: 320px) {
-//   width: 80vw;
-//   height: 90vh;
-//   hr {
-//     margin-bottom: 0.3rem;
-//   }
-//   h4 {
-//     font-size: small;
-//   }
-// }
-// @media only screen and (min-width: 360px) {
-//   width: 80vw;
-//   height: 90vh;
-//   h4 {
-//     font-size: small;
-//   }
-// }
-// @media only screen and (min-width: 411px) {
-//   width: 80vw;
-//   height: 90vh;
-// }
+margin-top: 30px;
+display: flex;
+align-items: center;
+flex-direction: column;
+margin-left: auto;
+margin-right: auto;
+padding:30px;
+height: 80vh;
+width: 30vw;
+overflow: scroll;
+background: rgba(255, 255, 255, 0.15);
+box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+backdrop-filter: blur(8.5px);
+-webkit-backdrop-filter: blur(8.5px);
+border-radius: 10px;
+color: #ffffff;
+text-transform: uppercase;
+letter-spacing: 0.4rem;
+@media only screen and (max-width: 320px) {
+  width: 80vw;
+  height: 90vh;
+  hr {
+    margin-bottom: 0.3rem;
+  }
+  h4 {
+    font-size: small;
+  }
+}
+@media only screen and (min-width: 360px) {
+  width: 80vw;
+  height: 90vh;
+  h4 {
+    font-size: small;
+  }
+}
+@media only screen and (min-width: 411px) {
+  width: 80vw;
+  height: 90vh;
+}
 
-// @media only screen and (min-width: 768px) {
-//   width: 80vw;
-//   height: 80vh;
-// }
-// @media only screen and (min-width: 1024px) {
-//   width: 70vw;
-//   height: 50vh;
-// }
-// @media only screen and (min-width: 1280px) {
-//   width: 30vw;
-//   height: 80vh;
-// }
+@media only screen and (min-width: 768px) {
+  width: 80vw;
+  height: 80vh;
+}
+@media only screen and (min-width: 1024px) {
+  width: 75vw;
+  height: 80vh;
+}
+@media only screen and (min-width: 1280px) {
+  width: 30vw;
+  height: 80vh;
+}
     
 `;

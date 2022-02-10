@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
-const BaseUrl = "https://delta-inspiration.herokuapp.com/api/seller-signup/"
+const BaseUrl = "https://inspiration-2021-backend.herokuapp.com/api/seller-signup/"
 export default function SignUp() {
     const history = useHistory()
     
@@ -41,8 +41,9 @@ export default function SignUp() {
         }
     }
 
-    return (<>
+	return (
         <Container>
+
             <Text>Sign Up</Text>
             <Input_container>
             <Input type="text" onChange={(e)=>{setname(e.target.value)}} placeholder="Name"/>
@@ -52,15 +53,17 @@ export default function SignUp() {
             <Input type="password" onChange={(e)=>{setconfirmpassword(e.target.value)}}placeholder="Confirm Password"/>
             <Input type="text" placeholder="GST No" onChange={(e)=>{setgstno(e.target.value)}}/>
             {/* <Input type="text" placeholder="Addhaar Card No" onChange={(e)=>{setgstno(e.target.value)}}/> */}
-            </Input_container>
             <Button_container>
             <Button onClick={handlesignup}>SignUp</Button>
-            <Button onClick={()=>{history.push("/login")}}>Login</Button>
+            <Button onClick={()=>{history.push("/")}}>Login</Button>
             </Button_container>
+            </Input_container>
+		
         </Container>
-            </>
 
-    )
+	)
+            
+    
 }
 
 const Text = styled.h1`
@@ -120,7 +123,7 @@ const Button_container = styled.div`
     align-items: center;
     justify-content: center;
     margin: 5px,20px;
-    margin-top: 200px;
+    margin-top: 30px;
     
 `;
 
@@ -129,8 +132,7 @@ const Input_container = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 10%;
-    margin-top: 150px;
+    height: 85%;
     width: 100%;
     
 `;
@@ -144,7 +146,7 @@ flex-direction: column;
 margin-left: auto;
 margin-right: auto;
 padding:0 ,20px;
-height: 200px;
+height: 400px;
 width: 30vw;
 background: rgba(255, 255, 255, 0.15);
 box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -182,7 +184,7 @@ letter-spacing: 0.4rem;
 }
 @media only screen and (min-width: 1024px) {
   width: 70vw;
-  height: 50vh;
+  height: 90vh;
 }
 @media only screen and (min-width: 1280px) {
   width: 30vw;

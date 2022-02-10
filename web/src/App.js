@@ -29,14 +29,13 @@ function App() {
   // const showposition = (position) =>{
   //   console.log(position.coords.latitude)
   // }
-//   const token = localStorage.getItem('token')
-  const token = "test"
+  const token = localStorage.getItem('token')
 
   console.log(token)
   return (
    <>
       <Container>
-   {token === null ? <Login/>:(
+   {token == null ? <Login/>:(
         <Router>
           <Switch>
             <Route exact path="/signnext"><SignUpNext/></Route>
@@ -60,5 +59,11 @@ function App() {
 export default App;
 
 const Container = styled.div`
-
+opacity:0.8;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
 `;

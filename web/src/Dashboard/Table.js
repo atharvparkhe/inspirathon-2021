@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
-import red_chair from './red_chair.png'
-import green_chair from './green_chair.png'
+import red_table from './dinner_table.png'
+import green_table from './green_dinner_table.png'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
 export default function Table({ update,id,name,available}) {
-    const BaseUrl = `https://delta-inspiration.herokuapp.com/api/seat/${id}/`
+    const BaseUrl = `https://inspiration-2021-backend.herokuapp.com/api/seat/${id}/`
     
     const handle_availability = ()=>{
         axios.patch(BaseUrl,{
@@ -24,7 +24,7 @@ export default function Table({ update,id,name,available}) {
     }
     return (
         <Container onClick={handle_availability}>
-           {available ? <img src={red_chair}/>:<img src={green_chair}/>}
+           {available ? <img src={red_table}/>:<img src={green_table}/>}
             <Text>{name}</Text>
 
         </Container>
@@ -43,7 +43,7 @@ const Container = styled.div`
     
 `;
 const Text = styled.p`
-    width: 100%;
-    margin-left: 18px;
+    // width: 100%;
+    margin-left: auto;
     margin-right: auto;
 `;

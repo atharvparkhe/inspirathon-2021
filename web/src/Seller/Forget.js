@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
-const BaseUrl = "https://delta-inspiration.herokuapp.com/api/seller-forgot/";
+const BaseUrl = "https://inspiration-2021-backend.herokuapp.com/api/seller-forgot/";
 export default function Forget() {
     const [email,setemail] = useState();
     const history = useHistory()

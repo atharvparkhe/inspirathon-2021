@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
-const BaseUrl = "https://delta-inspiration.herokuapp.com/api/seller-reset/"
+const BaseUrl = "https://inspiration-2021-backend.herokuapp.com/api/seller-reset/"
 
 export default function Fverify() {
     const [otp, setotp] = useState()

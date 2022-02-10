@@ -1,18 +1,21 @@
 import React from 'react'
 import { useHistory } from 'react-router'
+import Avatar from '@mui/material/Avatar';
 import styled from 'styled-components'
 import Button from '@mui/material/Button';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 toast.configure()
 
-export default function Header() {
+export default function Header({logo , shopName}) {
+		console.log(logo)
     const history = useHistory()
     return (
         <>
    <Navbar>
        <LeftContainer>
-            <h1>Team Delta</h1>
+				<Avatar alt="Remy Sharp" src={logo} style={{'margin-right': '10px'}}/>
+            <h1>{shopName}</h1>
        </LeftContainer>
        <RightContainer>
            {/* <Button onClick={(e)=>{history.push('/previousorders')}}>Previous Orders</Button> */}

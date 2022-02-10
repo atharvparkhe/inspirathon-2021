@@ -9,18 +9,29 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useHistory } from 'react-router'
 toast.configure()
 
-const BaseUrl = "https://delta-inspiration.herokuapp.com/api/get-seats/"
-const PostUrl = "https://delta-inspiration.herokuapp.com/api/add-seat/"
+// const BaseUrl = "https://delta-inspiration.herokuapp.com/api/get-seats/"
+// const PostUrl = "https://delta-inspiration.herokuapp.com/api/add-seat/"
+const BaseUrl = "https://inspiration-2021-backend.herokuapp.com/api/get-seats/"
+const PostUrl = "https://inspiration-2021-backend.herokuapp.com/api/add-seat/"
+
 
 export default function Dashboard() {
     const history = useHistory()
     const [input, setinput] = useState(false)
     const [tablename, settablename] = useState()
     const [tables, settables] = useState()
+		const [shopName, setshopName] = useState()
+		const [logoUrl , setlogoUrl] = useState()
 
     function fetchdata (){
-        console.log(localStorage.getItem('res_id'));
-        axios.post(BaseUrl,{
+        // console.log(localStorage.getItem('res_id'));
+			axios.get(`https://inspiration-2021-backend.herokuapp.com/api/restaurant/${localStorage.getItem('res_id')}`).then((res) => {
+				console.log(res)
+				setshopName(res.data.name)
+				setlogoUrl(res.data.logo)
+			})
+				
+			axios.post(BaseUrl,{
             "restaurant_id":localStorage.getItem('res_id')
         }).then((res)=>{
             settables(res.data.data)
@@ -32,13 +43,12 @@ export default function Dashboard() {
             
         })
     }
-
     useEffect(()=>{
         fetchdata()
     },[])
     return (
         <>
-        <Header/>
+        <Header logo={logoUrl} shopName = {shopName}/>
         <Container>
             <TextContainer>
                 <h1>Tables:- </h1>
@@ -101,10 +111,11 @@ const TextContainer = styled.div`
 `;
 const ItemContainer = styled.div`
     display: grid;
+		// background-color: red;	
     grid-template-columns: repeat(auto-fit, minmax(204px, 1fr));
     grid-gap: 16px;
-    padding: 40px;
-    margin-left: 90px;
+    padding: 60px;
+    // margin-left: 80px;
     
     `;
     const Container = styled.div`
