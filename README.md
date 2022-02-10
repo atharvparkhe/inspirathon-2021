@@ -26,7 +26,7 @@ We build an android application for customers to book seats in the Restaurant, a
 
 Django : https://github.com/atharvparkhe/restaurant-seat-booking
 
-React : https://github.com/Sachin9822/restu
+React : https://github.com/Sachin9822/Resturant-Management-system
 
 Android : https://github.com/AkashCSanjeev/Be-Seated
 
