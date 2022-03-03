@@ -1,7 +1,7 @@
 
 # Inspirathon 2021
 
-Me and my and my team participated in our first ever Hackathon event at [Inspirus](https://www.linkedin.com/feed/hashtag/?keywords=inspirus2k21) in October 2021 at [Don Bosko College of Engineering, Goa](https://www.linkedin.com/school/don-bosco-college-of-engineering-fatorda-goa/). 
+Me and my team participated in our first ever Hackathon event at [Inspirus](https://www.linkedin.com/feed/hashtag/?keywords=inspirus2k21) in October 2021 at [Don Bosko College of Engineering, Goa](https://www.linkedin.com/school/don-bosco-college-of-engineering-fatorda-goa/). 
 Me along with [Akash Sanjeev](https://www.linkedin.com/in/akash-sanjeev-37436a1b5/) and [Sachin Padwalkar](https://www.linkedin.com/in/sachin-padwalkar-a265291ba/) had participated as a team, where I was working on [Django application](https://github.com/atharvparkhe/restaurant-seat-booking) (Backend), Saching was handling [React application](https://github.com/Sachin9822/restu) (Frontend) and Akash was handling [Androind application](https://github.com/AkashCSanjeev/Be-Seated) (Frontend).
 
 We were working on Restaurant Seat Booking Management System.
